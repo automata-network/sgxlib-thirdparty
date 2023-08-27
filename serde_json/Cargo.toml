@@ -1,0 +1,18 @@
+[package]
+name = "serde_json"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["serde_json", "serde/std"]
+tstd = ["serde_json-sgx", "sgxlib/tstd", "serde/tstd"]
+
+[dependencies]
+sgxlib = { git = "https://github.com/automata-network/sgxlib", default-features = false }
+serde = { path = "../serde", default-features = false }
+serde_json-sgx = { optional = true, package = "serde_json", git = "https://github.com/mesalock-linux/serde-json-sgx", features = ["raw_value"] }
+serde_json = { optional = true, version = "1.0", features = ["raw_value"] }

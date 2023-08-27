@@ -1,0 +1,18 @@
+[package]
+name = "serde-big-array"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["serde-big-array", "serde/std"]
+tstd = ["serde-big-array-sgx", "sgxlib/tstd", "serde/tstd"]
+
+[dependencies]
+sgxlib = { git = "https://github.com/automata-network/sgxlib", default-features = false }
+serde = { path = "../serde", default-features = false }
+serde-big-array-sgx = { optional = true, package = "serde-big-array", git = "https://github.com/mesalock-linux/serde-big-array-sgx" }
+serde-big-array = { optional = true, version = "0.3.0" }

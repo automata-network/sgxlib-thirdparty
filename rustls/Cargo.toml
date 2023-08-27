@@ -1,0 +1,16 @@
+[package]
+name = "rustls"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["rustls"]
+tstd = ["rustls-sgx"]
+
+[dependencies]
+rustls                = { optional = true, version = "0.19.1"}
+rustls-sgx            = { optional = true, package = "rustls", tag = "sgx_1.1.3", git = "https://github.com/mesalock-linux/rustls" }

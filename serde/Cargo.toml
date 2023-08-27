@@ -1,0 +1,16 @@
+[package]
+name = "serde"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["serde"]
+tstd = ["serde-sgx"]
+
+[dependencies]
+serde                 = { optional = true, version = "1.0", features = ["derive"] }
+serde-sgx             = { optional = true, package = "serde", git = "https://github.com/mesalock-linux/serde-sgx", features = ["derive"] }

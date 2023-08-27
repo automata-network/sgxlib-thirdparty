@@ -1,0 +1,16 @@
+[package]
+name = "libc"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["libc"]
+tstd = ["sgxlib/libc"]
+
+[dependencies]
+sgxlib                = { optional = true, git = "https://github.com/automata-network/sgxlib", default-features = false }
+libc                  = { optional = true, version = "0.2.42" }

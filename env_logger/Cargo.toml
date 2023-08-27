@@ -1,0 +1,16 @@
+[package]
+name = "env_logger"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["env_logger"]
+tstd = ["env_logger-sgx"]
+
+[dependencies]
+env_logger-sgx        = { optional = true, package = "env_logger", git = "https://github.com/mesalock-linux/env_logger-sgx" }
+env_logger            = { optional = true, version = "=0.7.1" }

@@ -1,0 +1,16 @@
+[package]
+name = "base64"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["base64"]
+tstd = ["base64-sgx"]
+
+[dependencies]
+base64                = { optional = true, version = "0.13.0" }
+base64-sgx            = { optional = true, package = "base64", git = "https://github.com/mesalock-linux/rust-base64-sgx" }

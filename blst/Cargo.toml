@@ -1,0 +1,46 @@
+[package]
+name = "blst"
+version = "0.3.10"
+authors = ["sean-sn <sean@supranational.net>"]
+edition = "2021"
+license = "Apache-2.0"
+description = "Bindings for blst BLS12-381 library"
+repository = "https://github.com/supranational/blst"
+readme = "README.md"
+categories = ["cryptography"]
+keywords = ["crypto", "bls", "signature", "asm", "wasm"]
+build = "blst/bindings/rust/build.rs"
+include = [
+    "**/*.rs",
+    "/Cargo.toml",
+    "/README.md",
+    "/rustfmt.toml",
+    "/blst/src/*.c",
+    "/blst/src/*.h*",
+    "/blst/build/**",
+    "/blst/bindings/blst.h",
+    "/blst/bindings/blst_aux.h",
+    "/blst/bindings/blst.hpp",
+]
+links = "blst"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default               = ["std"]
+
+std = []
+tstd = []
+
+[dependencies]
+zeroize               = { version = "=1.4.3", features = ["zeroize_derive"] }
+hex                   = { version = "0.4", default-features = false, features = ["alloc"] }
+
+
+[dev-dependencies]
+rand = "0.7"
+rand_chacha = "0.2"
+# criterion = "0.3"
+
+[build-dependencies]
+cc = "1.0"

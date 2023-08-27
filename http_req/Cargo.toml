@@ -1,0 +1,16 @@
+[package]
+name = "http_req"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["http_req"]
+tstd = ["http_req-sgx"]
+
+[dependencies]
+http_req              = { optional = true, version="^0.7", default-features = false, features = ["rust-tls"]}
+http_req-sgx          = { optional = true, tag = "sgx_1.1.3", git = "https://github.com/mesalock-linux/http_req-sgx", package = "http_req" }

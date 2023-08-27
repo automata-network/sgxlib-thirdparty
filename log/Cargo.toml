@@ -1,0 +1,16 @@
+[package]
+name = "log"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["log"]
+tstd = ["log-sgx"]
+
+[dependencies]
+log-sgx               = { optional = true, package = "log", git = "https://github.com/mesalock-linux/log-sgx" }
+log                   = { optional = true, version = "=0.4.14" }
