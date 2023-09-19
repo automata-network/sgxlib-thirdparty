@@ -1,0 +1,17 @@
+[package]
+name = "thiserror"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["thiserror"]
+tstd = ["thiserror-sgx"]
+
+[dependencies]
+thiserror             = { optional = true, version = "1.0.24 "}
+thiserror-sgx         = { optional = true, git = "https://github.com/mesalock-linux/thiserror-sgx", package = "thiserror" }
+

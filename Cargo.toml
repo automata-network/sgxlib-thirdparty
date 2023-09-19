@@ -16,6 +16,7 @@ members = [
     "gsrs",
     "base64",
     "webpki",
+    "thiserror",
 ]
 
 [patch.'https://github.com/apache/teaclave-sgx-sdk.git']
