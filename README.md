@@ -1,6 +1,6 @@
 # SGX Thirdparty Library
 
-[![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache2-green.svg)](LICENSE)
 
 This repository contains a large number of third-party libraries, used for various functionalities and development purposes. One of its main features is to provide a unified interface, making it convenient to use a single piece of code simultaneously in both std and tstd environments.
 
