@@ -1,0 +1,16 @@
+[package]
+name = "num-integer"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["num-integer"]
+tstd = ["num-integer-sgx"]
+
+[dependencies]
+num-integer-sgx        = { optional = true, tag = "sgx_1.1.3", git = "https://github.com/mesalock-linux/num-integer-sgx", package = "num-integer" }
+num-integer            = { optional = true, version = "0.1" }
