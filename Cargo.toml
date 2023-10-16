@@ -6,6 +6,7 @@ members = [
     "serde_json",
     "serde-big-array",
     "blst",
+    "byteorder",
     "http",
     "http_req",
     "rustls",
