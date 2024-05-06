@@ -1,0 +1,62 @@
+[package]
+description = "A minimal implementation of the Polynomial Commitments API for EIP-4844, written in C."
+edition = "2021"
+license = "Apache-2.0"
+links = "ckzg"
+name = "c-kzg"
+readme = "README.md"
+version = "1.0.0"
+[target."cfg(target_env = \"msvc\")".build-dependencies.glob]
+version = "0.3"
+
+[[bench]]
+harness = false
+name = "kzg_benches"
+path = "bench"
+
+[build-dependencies.cc]
+version = "1.0"
+
+[dependencies.blst]
+default-features = false
+path = "../blst"
+
+
+[dependencies.hex]
+default-features = false
+features = ["alloc"]
+version = "0.4.2"
+
+[dependencies.libc]
+default-features = false
+version = "0.2"
+
+[dependencies.serde]
+default-features = false
+#features = ["alloc", "derive"]
+path = "../serde"
+
+[dependencies.sgxlib]
+git = "https://github.com/automata-network/sgxlib"
+default-features = false
+
+#[dev-dependencies.criterion]
+#version = "0.5.1"
+
+[dev-dependencies.glob]
+version = "0.3.1"
+
+[dev-dependencies.rand]
+version = "0.8.5"
+
+[dev-dependencies.serde_json]
+default-features = false
+path = "../serde_json"
+
+[features]
+default = ["std", "portable"]
+generate-bindings = []
+no-threads = []
+portable = []
+std = ["hex/std", "libc/std", "serde/std"]
+tstd = ["serde/tstd", "sgxlib/tstd"]
