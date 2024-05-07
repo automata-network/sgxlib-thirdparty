@@ -27,6 +27,11 @@ default-features = false
 features = ["alloc"]
 version = "0.4.2"
 
+[dependencies.lazy_static]
+default-features = false
+features = ["spin_no_std"]
+version = "1.4.0"
+
 [dependencies.libc]
 default-features = false
 version = "0.2"
@@ -38,6 +43,10 @@ path = "../serde"
 
 [dependencies.sgxlib]
 git = "https://github.com/automata-network/sgxlib"
+default-features = false
+
+[dependencies.serde_json]
+path = "../serde_json"
 default-features = false
 
 #[dev-dependencies.criterion]
@@ -58,5 +67,5 @@ default = ["std", "portable"]
 generate-bindings = []
 no-threads = []
 portable = []
-std = ["hex/std", "libc/std", "serde/std"]
-tstd = ["serde/tstd", "sgxlib/tstd"]
+std = ["hex/std", "libc/std", "serde/std", "serde_json/std"]
+tstd = ["serde/tstd", "sgxlib/tstd", "serde_json/tstd"]
