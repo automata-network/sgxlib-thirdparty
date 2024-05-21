@@ -12,5 +12,5 @@ std = ["serde"]
 tstd = ["serde-sgx"]
 
 [dependencies]
-serde                 = { optional = true, version = "1.0", features = ["derive"] }
-serde-sgx             = { optional = true, package = "serde", git = "https://github.com/mesalock-linux/serde-sgx", features = ["derive"] }
+serde                 = { optional = true, version = "1.0", features = ["derive", "rc"] }
+serde-sgx             = { optional = true, package = "serde", git = "https://github.com/mesalock-linux/serde-sgx", features = ["derive", "rc"] }
