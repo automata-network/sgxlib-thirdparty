@@ -21,6 +21,7 @@ members = [
     "webpki",
     "thiserror",
     "c-kzg",
+    "libflate",
 ]
 
 [patch.'https://github.com/apache/teaclave-sgx-sdk.git']

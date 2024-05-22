@@ -1,0 +1,18 @@
+[package]
+name = "libflate"
+version = "0.1.0"
+authors = ["Automata Team"]
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+default = ["std"]
+
+std = ["libflate"]
+tstd = ["sgxlib/tstd", "libflate-sgx"]
+
+[dependencies]
+sgxlib = { git = "https://github.com/automata-network/sgxlib", default-features = false }
+
+libflate = { optional = true, git = "https://github.com/sile/libflate", tag = "0.1.27" }
+libflate-sgx = { optional = true, git = "https://github.com/mesalock-linux/libflate-sgx", package = "libflate", tag = "sgx_1.1.3" }
